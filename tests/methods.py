@@ -25,20 +25,20 @@ def addAvatar(uuid: int | str, Mime: str) -> Response:
 
     return res
 
-def addbg(uuid: int | str, Mime: str) -> dict:
+def addbg(uuid: int | str, Mime: str) -> Response:
     res = post(addBG, json={
         "id": uuid,
         "mime": Mime
     })
 
-    return res.json()
+    return res
 
-def addPost(uuid, Mime, postid=1):
+def addPost(uuid, Mime, postid=1) -> Response:
     res = post(addPOST, json={
         "id": uuid,
         "mime": Mime,
         "postID": postid
     })
 
-    return res.json()
+    return res
 

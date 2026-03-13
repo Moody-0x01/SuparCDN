@@ -8,5 +8,8 @@ venv
 
 ./tests/img/
 /tests/img/
+
+./tests/backgrounds//
+/tests/backgrounds/
 # python cache
 __pycache__
