@@ -2,7 +2,8 @@
 from requests import Response, post
 from base64 import b64encode
 from socket import gethostbyname, gethostname
-api = f"http://{gethostbyname(gethostname())}:8500"
+host = gethostbyname(gethostname())
+api = f"http://{host}:8500"
 
 # Endpoints.
 addIMG = f"{api}/Zimg/addAvatar"
@@ -40,23 +41,4 @@ def addPost(uuid, Mime, postid=1):
     })
 
     return res.json()
-
-
-def main():
-    path = "./img/img.png"
-
-    with open(path, "rb") as fp:
-        print("Opening..")
-        uuid = 1
-        print("Converting..")
-        mime = MakeMime(fp)
-        print("Sending..")
-        response = addAvatar(uuid, mime)
-        if response["code"] == 200:
-            print(response["data"]["url"])
-        
-if __name__ == "__main__":
-    main()
-
-
 
