@@ -1,4 +1,4 @@
-# ZIMG CDN
+# ZimgCDN — Image Content Delivery System
 
 ## Notes
 
